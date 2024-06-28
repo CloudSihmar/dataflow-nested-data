@@ -21,7 +21,7 @@ This repository demonstrates how to transform data from a JSON file in Google Cl
 ### 2. Open Cloud Shell and Upload the Python Pipeline File
 
 1. Open Google Cloud Shell.
-2. Upload your Python pipeline file (e.g., `csv_to_bigquery.py`) to Cloud Shell.
+2. Upload your Python pipeline file (e.g., `json_to_bigquery.py`) to Cloud Shell.
 
 ### 3. Set Up Python Virtual Environment, install apache beam and start a pipeline
 
@@ -37,15 +37,7 @@ source env/bin/activate
 pip3 install apache-beam[gcp]
 
 # Run the pipeline
-python3 csv_to_bigquery.py \
---input gs://sandeep-apache/data-flow-demo.csv \
---output  gs://sandeep-apache/out.txt \
---project techlanders-internal \
---region us-central1 \
---staging_location gs://sandeep-apache/staging \
---temp_location gs://sandeep-apache/temp \
---runner DataFlowRunner
-
+python3 json_to_bigquery.py 
 
 
 
